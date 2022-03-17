@@ -14,12 +14,6 @@ function App() {
         <AboutMe />
 
         <hr />
-
-        <article class="flex flex-wrap">
-          <div>
-            <h2 class="p-3 py-6 text-5xl underline">My-Projects</h2>
-          </div>
-        </article>
       </main>
     </div>
   );
