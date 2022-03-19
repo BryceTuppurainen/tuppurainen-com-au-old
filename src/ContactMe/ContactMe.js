@@ -43,7 +43,9 @@ class ContactMe extends React.Component {
     return (
       <article class=" bg-gradient-to-br from-zinc-700 via-zinc-800 to-black border-t-2 border-orange-400">
         <div class="ml-9">
-          <h2 class="py-6 text-5xl text-slate-100 font-bold">Contact</h2>
+          <h2 class="py-6 text-5xl text-slate-100 font-bold smvp:text-3xl">
+            Contact
+          </h2>
           <p class="text-2xl mb-6">
             <a
               href="mailto:bryce@tuppurainen.com.au"
@@ -61,7 +63,7 @@ class ContactMe extends React.Component {
                 </label>
                 <input
                   type="text"
-                  class="w-1/2 text-black p-3 border border-black rounded text-lg font-semibold"
+                  class="w-[35rem] smvp:w-[20rem] text-black p-3 border border-black rounded text-lg font-semibold"
                   onChange={this.handleChange}
                   value={this.state.name}
                   placeholder="Please enter your name..."
@@ -76,7 +78,7 @@ class ContactMe extends React.Component {
                 </label>
                 <input
                   type="text"
-                  class="w-1/2 text-black p-3 border border-black rounded text-lg font-semibold"
+                  class="w-[35rem] smvp:w-[20rem] text-black p-3 border border-black rounded text-lg font-semibold"
                   onChange={this.handleChange}
                   value={this.state.email}
                   placeholder="Please enter your email address..."
@@ -90,7 +92,7 @@ class ContactMe extends React.Component {
                   Enquiry
                 </label>
                 <textarea
-                  class="w-1/2 text-black p-3 border border-black rounded text-lg h-[20rem]"
+                  class="w-[35rem] smvp:w-[20rem] text-black p-3 border border-black rounded text-lg h-[20rem]"
                   onChange={this.handleChange}
                   value={this.state.content}
                   placeholder="Email contents..."
