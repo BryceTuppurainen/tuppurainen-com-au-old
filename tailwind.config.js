@@ -2,6 +2,11 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        smvp: {
+          max: "850px",
+        },
+      },
       keyframes: {
         typing: {
           "0%": {

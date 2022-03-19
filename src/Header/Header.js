@@ -9,8 +9,8 @@ function Header(props) {
         <h2 class="p-6 pt-20 text-lg text-slate-100 font-bold">
           tuppurainen.com.au
         </h2>
-        <h1 class="p-6 text-7xl text-slate-100 font-bold">
-          Bryce Tuppurainen's Portfolio
+        <h1 class="p-6 text-7xl text-slate-100 font-bold smvp:text-3xl">
+          Bryce Tuppurainen
         </h1>
         <h2 class="p-6 text-sm text-slate-200 mb-20">
           A portfolio site by Bryce Tuppurainen developed using
