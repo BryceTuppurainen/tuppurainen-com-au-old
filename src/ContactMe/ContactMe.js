@@ -1,5 +1,11 @@
 import React from "react";
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 class ContactMe extends React.Component {
   constructor(props) {
     super(props);
@@ -7,12 +13,18 @@ class ContactMe extends React.Component {
     this.state = { name: "", email: "", content: "" };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleContentChange = this.handleContentChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleSubmit(e) {
+    e.preventDefault();
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state }),
+    }).catch((error) => alert(error));
+
     alert(
       "Hi " +
         this.state.name.split(" ")[0] +
@@ -23,16 +35,8 @@ class ContactMe extends React.Component {
     this.setState({ name: "", email: "", content: "" });
   }
 
-  handleNameChange(e) {
-    this.setState({ name: e.target.value });
-  }
-
-  handleEmailChange(e) {
-    this.setState({ email: e.target.value });
-  }
-
-  handleContentChange(e) {
-    this.setState({ content: e.target.content });
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
@@ -58,7 +62,7 @@ class ContactMe extends React.Component {
                 <input
                   type="text"
                   class="w-1/2 text-black p-3 border border-black rounded text-lg font-semibold"
-                  onChange={this.handleNameChange}
+                  onChange={this.handleChange}
                   value={this.state.name}
                   placeholder="Please enter your name..."
                   name="name"
@@ -73,7 +77,7 @@ class ContactMe extends React.Component {
                 <input
                   type="text"
                   class="w-1/2 text-black p-3 border border-black rounded text-lg font-semibold"
-                  onChange={this.handleEmailChange}
+                  onChange={this.handleChange}
                   value={this.state.email}
                   placeholder="Please enter your email address..."
                   name="email"
@@ -87,7 +91,7 @@ class ContactMe extends React.Component {
                 </label>
                 <textarea
                   class="w-1/2 text-black p-3 border border-black rounded text-lg h-[20rem]"
-                  onChange={this.handleContentChange}
+                  onChange={this.handleChange}
                   value={this.state.content}
                   placeholder="Email contents..."
                   name="content"
