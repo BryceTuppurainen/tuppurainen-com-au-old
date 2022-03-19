@@ -13,7 +13,6 @@ class ContactMe extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
     alert(
       "Hi " +
         this.state.name.split(" ")[0] +
