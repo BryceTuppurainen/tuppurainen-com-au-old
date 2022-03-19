@@ -50,6 +50,7 @@ class ContactMe extends React.Component {
             </a>
           </p>
           <form name="contact" netlify onSubmit={this.handleSubmit}>
+            <input type="hidden" name="contact" value="contact" />
             <div class="flex flex-wrap w-1/2 p-3">
               <div class="w-full my-3">
                 <label class="text-slate-100 text-2xl inline-block w-[10rem] font-semibold">
