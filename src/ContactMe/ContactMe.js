@@ -62,6 +62,7 @@ class ContactMe extends React.Component {
                   onChange={this.handleNameChange}
                   value={this.state.name}
                   placeholder="Please enter your name..."
+                  name="name"
                   required
                 />
               </div>
@@ -76,6 +77,7 @@ class ContactMe extends React.Component {
                   onChange={this.handleEmailChange}
                   value={this.state.email}
                   placeholder="Please enter your email address..."
+                  name="email"
                   required
                 />
               </div>
@@ -89,6 +91,7 @@ class ContactMe extends React.Component {
                   onChange={this.handleContentChange}
                   value={this.state.content}
                   placeholder="Email contents..."
+                  name="content"
                   required
                 />
               </div>
