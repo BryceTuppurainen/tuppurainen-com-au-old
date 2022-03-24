@@ -113,7 +113,7 @@ class Contact extends React.Component {
                 <div class="inline-block w-[10rem] smvp:w-[5rem]"></div>
                 <input
                   type="submit"
-                  class="text-black p-3 border border-black rounded bg-white hover:bg-zinc-700 hover:border-white hover:text-white hover:cursor-pointer"
+                  class="text-black p-3 border border-black rounded bg-white hover:bg-teal-500 hover:border-white hover:text-white hover:cursor-pointer"
                   value="Send Message"
                 />
               </div>
