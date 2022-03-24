@@ -41,17 +41,12 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <article class="bg-gradient-to-br from-gray-900 via-black to-slate-800 py-3">
+      <article class="bg-gradient-to-tr from-zinc-800 to-black py-3">
         <div class="ml-9">
-          <a href="#contact">
-            <h2
-              id="contact"
-              class="hover:underline py-6 text-5xl text-slate-100 font-semibold smvp:text-3xl"
-            >
-              Contact
-            </h2>
-          </a>
-          <p class="text-2xl mb-6">
+          <h2 class="py-6 text-5xl smvp:text-3xl text-slate-100 font-semibold">
+            Contact
+          </h2>
+          <p class="text-2xl smvp:text-xl mb-6">
             <a
               href="mailto:bryce@tuppurainen.com.au"
               class="hover:underline text-slate-100"
@@ -61,14 +56,14 @@ class Contact extends React.Component {
           </p>
           <form name="contact" netlify onSubmit={this.handleSubmit}>
             <input type="hidden" name="form-name" value="contact" />
-            <div class="flex flex-wrap gap-3 min-w-11/12">
+            <div class="flex flex-wrap gap-3 w-full">
               <div class="w-full flex gap-3">
-                <label class="text-slate-100 text-2xl inline-block w-[10rem] ">
+                <label class="smvp:w-[5rem] text-slate-100 text-2xl inline-block w-[10rem] ">
                   Name*
                 </label>
                 <input
                   type="text"
-                  class="w-[20rem] smvp:w-[20rem] text-black p-3 border border-black rounded text-lg "
+                  class="w-[20rem] smvp:w-[15rem] text-black p-3 border border-black rounded text-lg "
                   onChange={this.handleChange}
                   value={this.state.firstname}
                   name="firstname"
@@ -77,7 +72,7 @@ class Contact extends React.Component {
                 />
                 <input
                   type="text"
-                  class="w-[20rem] smvp:w-[20rem] text-black p-3 border border-black rounded text-lg "
+                  class="w-[20rem] smvp:w-[15rem] text-black p-3 border border-black rounded text-lg "
                   onChange={this.handleChange}
                   value={this.state.lastname}
                   name="lastname"
@@ -87,26 +82,26 @@ class Contact extends React.Component {
               </div>
 
               <div class="w-full flex gap-3">
-                <label class="text-slate-100 text-2xl inline-block w-[10rem] ">
+                <label class="smvp:w-[5rem] text-slate-100 text-2xl inline-block w-[10rem] ">
                   Email*
                 </label>
                 <input
                   type="text"
-                  class="w-[40.75rem] smvp:w-[40.75rem] text-black p-3 border border-black rounded text-lg "
+                  class="w-[40.75rem] smvp:w-[30.75rem] text-black p-3 border border-black rounded text-lg "
                   onChange={this.handleChange}
                   value={this.state.email}
                   name="email"
-                  placeholder="place.holder@gmail.com"
+                  placeholder="placeholder@example.com"
                   required
                 />
               </div>
 
               <div class="w-full flex gap-3">
-                <label class="text-slate-100 text-2xl inline-block w-[10rem]  align-top">
-                  Enquiry*
+                <label class="smvp:w-[5rem] text-slate-100 text-2xl inline-block w-[10rem]  align-top">
+                  Enquiry
                 </label>
                 <textarea
-                  class="w-[40.75rem] smvp:w-[40.75rem] text-black p-3 border border-black rounded text-lg h-[20rem]"
+                  class="w-[40.75rem] smvp:w-[30.75rem] text-black p-3 border border-black rounded text-lg h-[20rem]"
                   onChange={this.handleChange}
                   value={this.state.content}
                   name="content"
@@ -118,7 +113,7 @@ class Contact extends React.Component {
                 <div class="inline-block w-[10rem]"></div>
                 <input
                   type="submit"
-                  class="text-black p-3 border border-black rounded bg-white hover:bg-slate-600 hover:border-white hover:text-white hover:cursor-pointer"
+                  class="text-black p-3 border border-black rounded bg-white hover:bg-zinc-700 hover:border-white hover:text-white hover:cursor-pointer"
                   value="Send Message"
                 />
               </div>
