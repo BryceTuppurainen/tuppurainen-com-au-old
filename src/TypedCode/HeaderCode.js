@@ -1,8 +1,8 @@
 import TypedCode from "./TypedCode";
 
-function CodeExample(props) {
+function HeaderCode(props) {
   return (
-    <article>
+    <article class="border-y-2 border-teal-600">
       <div class="py-6 bg-zinc-900 min-h-[30vh]">
         <code class="px-3 text-2xl smvp:text-sm inline-flex">
           <span class="text-green-300">bryce@tuppurainen.com.au</span>
@@ -30,4 +30,4 @@ function CodeExample(props) {
   );
 }
 
-export default CodeExample;
+export default HeaderCode;

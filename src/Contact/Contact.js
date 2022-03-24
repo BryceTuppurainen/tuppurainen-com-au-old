@@ -6,11 +6,11 @@ const encode = (data) => {
     .join("&");
 };
 
-class ContactMe extends React.Component {
+class Contact extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { name: "", email: "", content: "" };
+    this.state = { firstname: "", lastname: "", email: "", content: "" };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -27,12 +27,12 @@ class ContactMe extends React.Component {
 
     alert(
       "Hi " +
-        this.state.name.split(" ")[0] +
+        this.state.firstname +
         ",\n\nThanks for getting in touch. I'll get back to you at " +
         this.state.email +
         " regarding your enquiry soon.\n\nKind Regards,\nBryce Tuppurainen"
     );
-    this.setState({ name: "", email: "", content: "" });
+    this.setState({ firstname: "", lastname: "", email: "", content: "" });
   }
 
   handleChange(e) {
@@ -41,11 +41,16 @@ class ContactMe extends React.Component {
 
   render() {
     return (
-      <article class=" bg-gradient-to-br from-zinc-700 via-zinc-800 to-black border-t-2 border-orange-400">
+      <article class="bg-gradient-to-br from-gray-900 via-black to-slate-800 py-3">
         <div class="ml-9">
-          <h2 class="py-6 text-5xl text-slate-100 font-bold smvp:text-3xl">
-            Contact
-          </h2>
+          <a href="#contact">
+            <h2
+              id="contact"
+              class="hover:underline py-6 text-5xl text-slate-100 font-semibold smvp:text-3xl"
+            >
+              Contact
+            </h2>
+          </a>
           <p class="text-2xl mb-6">
             <a
               href="mailto:bryce@tuppurainen.com.au"
@@ -56,56 +61,64 @@ class ContactMe extends React.Component {
           </p>
           <form name="contact" netlify onSubmit={this.handleSubmit}>
             <input type="hidden" name="form-name" value="contact" />
-            <div class="flex flex-wrap w-1/2 p-3">
-              <div class="w-full my-3">
-                <label class="text-slate-100 text-2xl inline-block w-[10rem] font-semibold">
-                  Name
+            <div class="flex flex-wrap gap-3 min-w-11/12">
+              <div class="w-full flex gap-3">
+                <label class="text-slate-100 text-2xl inline-block w-[10rem] ">
+                  Name*
                 </label>
                 <input
                   type="text"
-                  class="w-[35rem] smvp:w-[20rem] text-black p-3 border border-black rounded text-lg font-semibold"
+                  class="w-[20rem] smvp:w-[20rem] text-black p-3 border border-black rounded text-lg "
                   onChange={this.handleChange}
-                  value={this.state.name}
-                  placeholder="Please enter your name..."
-                  name="name"
+                  value={this.state.firstname}
+                  name="firstname"
+                  placeholder="First Name"
+                  required
+                />
+                <input
+                  type="text"
+                  class="w-[20rem] smvp:w-[20rem] text-black p-3 border border-black rounded text-lg "
+                  onChange={this.handleChange}
+                  value={this.state.lastname}
+                  name="lastname"
+                  placeholder="Last Name"
                   required
                 />
               </div>
 
-              <div class="w-full my-3">
-                <label class="text-slate-100 text-2xl inline-block w-[10rem] font-semibold">
-                  Email
+              <div class="w-full flex gap-3">
+                <label class="text-slate-100 text-2xl inline-block w-[10rem] ">
+                  Email*
                 </label>
                 <input
                   type="text"
-                  class="w-[35rem] smvp:w-[20rem] text-black p-3 border border-black rounded text-lg font-semibold"
+                  class="w-[40.75rem] smvp:w-[40.75rem] text-black p-3 border border-black rounded text-lg "
                   onChange={this.handleChange}
                   value={this.state.email}
-                  placeholder="Please enter your email address..."
                   name="email"
+                  placeholder="place.holder@gmail.com"
                   required
                 />
               </div>
 
-              <div class="w-full my-3">
-                <label class="text-slate-100 text-2xl inline-block w-[10rem] font-semibold align-top">
-                  Enquiry
+              <div class="w-full flex gap-3">
+                <label class="text-slate-100 text-2xl inline-block w-[10rem]  align-top">
+                  Enquiry*
                 </label>
                 <textarea
-                  class="w-[35rem] smvp:w-[20rem] text-black p-3 border border-black rounded text-lg h-[20rem]"
+                  class="w-[40.75rem] smvp:w-[40.75rem] text-black p-3 border border-black rounded text-lg h-[20rem]"
                   onChange={this.handleChange}
                   value={this.state.content}
-                  placeholder="Email contents..."
                   name="content"
                   required
                 />
               </div>
 
-              <div class="w-full my-3">
+              <div class="w-full flex gap-3">
                 <div class="inline-block w-[10rem]"></div>
                 <input
                   type="submit"
-                  class="text-black p-3 border border-black rounded bg-white hover:bg-slate-600 hover:border-white hover:text-white"
+                  class="text-black p-3 border border-black rounded bg-white hover:bg-slate-600 hover:border-white hover:text-white hover:cursor-pointer"
                   value="Send Message"
                 />
               </div>
@@ -117,4 +130,4 @@ class ContactMe extends React.Component {
   }
 }
 
-export default ContactMe;
+export default Contact;

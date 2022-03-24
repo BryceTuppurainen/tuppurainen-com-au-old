@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       screens: {
         smvp: {
-          max: "850px",
+          max: "1300px",
         },
       },
       keyframes: {
