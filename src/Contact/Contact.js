@@ -51,13 +51,13 @@ class Contact extends React.Component {
               href="mailto:bryce@tuppurainen.com.au"
               class="hover:underline text-slate-100"
             >
-              bryce@tuppurainen.com.au
+              My email address is: bryce@tuppurainen.com.au but if you would prefer to send a message through this site please use the form below:
             </a>
           </p>
           <form name="contact" netlify onSubmit={this.handleSubmit}>
             <input type="hidden" name="form-name" value="contact" />
             <div class="flex flex-wrap gap-3 w-full">
-              <div class="w-full flex gap-3">
+              <div class="w-full flex flex-wrap gap-3">
                 <label class="smvp:w-[5rem] text-slate-100 text-2xl inline-block w-[10rem] ">
                   Name*
                 </label>
