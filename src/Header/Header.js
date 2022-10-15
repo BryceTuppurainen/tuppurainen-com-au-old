@@ -14,7 +14,7 @@ function Header() {
             tuppurainen.com.au
           </h2>
         </a>
-        <h1 className="p-6 text-7xl text-slate-100 font-bold smvp:text-3xl">
+        <h1 className="p-6 text-7xl text-slate-100 font-bold">
           Bryce Tuppurainen
         </h1>
         <h2 className="p-6 text-sm text-slate-200 mb-20">
